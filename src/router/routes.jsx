@@ -26,7 +26,9 @@ element:<AllTourist></AllTourist>
 
 {
     path:'/TouristsSpotst',
-    element:<AddTouristsSpot></AddTouristsSpot>
+    element:<AddTouristsSpot>
+
+    </AddTouristsSpot>
 },
 {
     path:'/myList',

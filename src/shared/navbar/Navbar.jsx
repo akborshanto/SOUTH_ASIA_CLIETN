@@ -5,7 +5,7 @@ const Navbar = () => {
   const links=<>
   <NavLink to='/'>HOME</NavLink>
   <NavLink to='/allTourist'>All Tourists Spot</NavLink>
-  <NavLink to='/TouristsSpotst'>All Tourists Spot</NavLink>
+  <NavLink to='/TouristsSpotst'>Add Tourists Spot</NavLink>
   <NavLink to='/myList'>My List</NavLink>
 
   </>
@@ -21,7 +21,7 @@ const Navbar = () => {
  {links}
         </ul>
       </div>
-      <button className="btn btn-outline btn-success">SOUTH_ASIA</button>
+      <button className="btn btn-outline btn-success">MALAYSIA</button>
 
     </div>
     <div className="navbar-center hidden lg:flex">

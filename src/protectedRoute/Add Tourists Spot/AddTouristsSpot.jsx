@@ -1,6 +1,7 @@
 import React from 'react'
 
 const AddTouristsSpot = () => {
+
   return (
     <div>
     Add Tourists Spot
