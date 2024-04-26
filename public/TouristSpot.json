@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Petronas Twin Towers",
+      "location": "Kuala Lumpur, Malaysia",
+      "img": "https://example.com/petronas-twin-towers.jpg"
+    },
+    {
+      "name": "Batu Caves",
+      "location": "Selangor, Malaysia",
+      "img": "https://example.com/batu-caves.jpg"
+    },
+    {
+      "name": "Langkawi Sky Bridge",
+      "location": "Langkawi, Malaysia",
+      "img": "https://example.com/langkawi-sky-bridge.jpg"
+    },
+    {
+      "name": "Penang Hill",
+      "location": "Penang, Malaysia",
+      "img": "https://example.com/penang-hill.jpg"
+    },
+    {
+      "name": "Taman Negara National Park",
+      "location": "Pahang, Malaysia",
+      "img": "https://example.com/taman-negara-national-park.jpg"
+    },
+    {
+      "name": "Malacca Sultanate Palace Museum",
+      "location": "Malacca, Malaysia",
+      "img": "https://example.com/malacca-sultanate-palace-museum.jpg"
+    }
+  ]
+  

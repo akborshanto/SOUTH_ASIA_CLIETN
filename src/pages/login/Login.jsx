@@ -21,21 +21,23 @@ login(email,password)
 .then(result=>{
 console.log(result)
 })
-.catch(error=>console.log(error))
+.catch(error=>{
+	toast.error("Please Give the Correct Email & Password.")
+})
 
 
     /* ========Password validation=========== */
     if (password.length < 6) {
       return toast.error(" PASSEORD Length must be at least 6 character");
     }
-    if (!/^(?=.*[A-Z]).{8,}$/.test(password)) {
-      return toast.error("Must have an Uppercase letter in the password");
-    }
-    if (!/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/.test(password)) {
-      return toast("Must have a Lowercase letter in the password");
-    }
+    // if (!/^(?=.*[A-Z]).{8,}$/.test(password)) {
+    //   return toast.error("Must have an Uppercase letter in the password");
+    // }
+    // if (!/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/.test(password)) {
+    //   return toast("Must have a Lowercase letter in the password");
+    // }
    
-  };
+  }//;https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?t=st=1714103071~exp=1714106671~hmac=2232a3af0dfc98faf89af349f906681c2d6ac38b7a2ac969a16bda89cf72c04d&w=740
 /* =========google login ===*/
 const handleGoogle=()=>{
 	googleLogin()

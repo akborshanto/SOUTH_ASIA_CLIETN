@@ -10,6 +10,8 @@ import AddTouristsSpot from "../protectedRoute/Add Tourists Spot/AddTouristsSpot
 import MyList from "../protectedRoute/myList/MyList";
 import Login from "../pages/login/Login";
 import Regester from "../pages/Regester/Regester";
+import PrivateRoute from "../protectedRoute/PrivateRoute";
+import ViewDetail from "../component/viewDetail/ViewDetail";
 
   export const router = createBrowserRouter([
     {
@@ -26,21 +28,28 @@ element:<AllTourist></AllTourist>
 
 {
     path:'/TouristsSpotst',
-    element:<AddTouristsSpot>
+    element:<PrivateRoute><AddTouristsSpot>   </AddTouristsSpot></PrivateRoute>
 
-    </AddTouristsSpot>
+ 
 },
 {
     path:'/myList',
-    element:<MyList></MyList>
+    element:<PrivateRoute><MyList></MyList></PrivateRoute>
 },
 {
 path:"/login",
 element:<Login></Login>
 },
 {
-  path:"register",
+  path:"/register",
   element:<Regester></Regester>
+},
+
+{
+  path:'/viewDetail',
+  element:<PrivateRoute>
+  <ViewDetail></ViewDetail>
+  </PrivateRoute>
 }
 
       ]
