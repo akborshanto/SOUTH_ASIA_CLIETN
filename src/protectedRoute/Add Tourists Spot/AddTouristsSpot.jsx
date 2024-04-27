@@ -29,7 +29,7 @@ fetch('http://localhost:5000/addSpot',{
 })
 .then(res=>res.json())
 .then(data=>{
-  toast("successfully Google Login")
+  toast("successfully Added Spot")
 
 })
 

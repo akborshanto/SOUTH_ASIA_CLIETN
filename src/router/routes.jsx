@@ -23,7 +23,8 @@ import ViewDetail from "../component/viewDetail/ViewDetail";
 element:<Home></Home>,
 },
 {path:'/allTourist',
-element:<AllTourist></AllTourist>
+element:<AllTourist></AllTourist>,
+loader:()=>fetch('http://localhost:5000/addSpot')
 },
 
 {
@@ -46,10 +47,11 @@ element:<Login></Login>
 },
 
 {
-  path:'/viewDetail',
+  path:'/viewDetail/:id',
   element:<PrivateRoute>
   <ViewDetail></ViewDetail>
   </PrivateRoute>
+  ,loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
 }
 
       ]
