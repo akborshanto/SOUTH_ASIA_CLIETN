@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../hook/useContext/UseContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,9 +7,10 @@ import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 const Login = () => {
   const [show, setShow] = useState(false);
-  const { login ,googleLogin} = useContext(AuthContext);
+  const { login ,googleLogin,user} = useContext(AuthContext);
 
-
+const location=useLocation()
+const navigate=useNavigate()
   /* ========LOGIN===== */
   const handleLoging = (e) => {
     e.preventDefault();
@@ -19,12 +20,21 @@ const Login = () => {
 /* logint */
 login(email,password)
 .then(result=>{
+navigate(location.state)
+
 console.log(result)
 })
 .catch(error=>{
 	toast.error("Please Give the Correct Email & Password.")
 })
 
+// useEffect(()=>{
+// if(user){
+// navigate(location.state)
+// }
+
+
+// },[user])
 
     /* ========Password validation=========== */
     if (password.length < 6) {
