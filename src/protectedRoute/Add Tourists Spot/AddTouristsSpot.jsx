@@ -1,6 +1,7 @@
 import React from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UseTitle from './../../hook/useTitle/UseTitle';
 const AddTouristsSpot = () => {
 
 
@@ -36,9 +37,127 @@ fetch('http://localhost:5000/addSpot',{
   }
   return (
     <div>
-    <div className="hero min-h-screen">
+
+
     <ToastContainer position="top-center" />
-    <div className="hero-content flex-col lg:flex-row-reverse">
+
+
+    <section className="p-6 bg-[#6ab8b4] text-white">
+    <UseTitle heading='ADD TOURIEST SPOT'></UseTitle>
+
+    <form noValidate="" action="" className=" text-white container flex flex-col mx-auto space-y-12"  onSubmit={addTouristSpot}>
+ 
+        <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-[#6ab8b4] text-gray-400">
+          <div className="col-span-full sm:col-span-3">
+          <label className="label">
+          <span className="label-text">Photo</span>
+        </label>
+        <input name='photo' type="text" placeholder="photo" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-3">
+          <label className="label">
+          <span className="label-text">ToureistName</span>
+        </label>
+        <input name='ToureistName' type="text" placeholder="ToureistName" className="  w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-3 ">
+          <label className="label">
+          <span className="label-text">country_Name</span>
+        </label>
+        <input name='country_Name' type="text" placeholder="country_Name" className="w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-3 ">
+          <label className="label">
+          <span className="label-text">location</span>
+        </label>
+        <input name='location' type="text" placeholder="location" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+          <span className="label-text">Short description</span>
+        </label>
+        <input name='description' type="text" placeholder="description" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+          <span className="label-text">average_cost</span>
+        </label>
+        <input name='average_cost' type="text" placeholder="average_cost" className="w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+          <span className="label-text">seasonality</span>
+        </label>
+        <input name='seasonality' type="text" placeholder="seasonality" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+          <span className="label-text">travel_time</span>
+        </label>
+        <input name='travel_time' type="text" placeholder="travel_time" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+          <span className="label-text">totaVisitorsPerYear</span>
+        </label>
+        <input name='totaVisitorsPerYear' type="text" placeholder="totaVisitorsPerYear" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input name='Name' type="text" placeholder="Name" className=" w-full input input-bordered" required />
+          </div>
+          <div className="col-span-full sm:col-span-2">
+          <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input name='Email' type="email" placeholder="Email" className=" w-full input input-bordered" required />
+          </div>
+
+        </div>
+
+        <button className="block w-full p-3 text-center rounded-sm hover:bg-[#AADDE5] hover:transition-shadow text-white bg-blue-600 ">
+        ADD SPOT
+      </button>
+    </form>
+  </section>
+
+{/* ======================================= */}
+
+    <div className="hero min-h-screen">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/*     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="text-center lg:text-left">
         <h1 className="text-5xl font-bold">ADD TOURIEST SPOT</h1>
         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
@@ -55,7 +174,7 @@ fetch('http://localhost:5000/addSpot',{
             <label className="label">
               <span className="label-text">ToureistName</span>
             </label>
-            <input name='ToureistName' type="text" placeholder="ToureistName" className="input input-bordered" required />
+            <input name='ToureistName' type="text" placeholder="ToureistName" className="  w-full input input-bordered" required />
           </div>
          
           <div className="form-control">
@@ -125,7 +244,7 @@ fetch('http://localhost:5000/addSpot',{
           </div>
         </form>
       </div>
-    </div>
+    </div> */}
   </div>
     </div>
   )
