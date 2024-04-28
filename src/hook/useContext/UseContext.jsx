@@ -8,12 +8,12 @@ import {
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
-import { TwitterAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
 const provider = new GoogleAuthProvider();
-const TwitterProvider = new TwitterAuthProvider();
+const githubprovider = new GithubAuthProvider();
 const UseContext = ({ children }) => {
   const [user, setUser] = useState(null);
 const [loading,setLoading]=useState(true)
@@ -35,7 +35,11 @@ const [loading,setLoading]=useState(true)
  setLoading(true)
     return signInWithPopup(auth, provider);
   };
-  /* login with TWITTER ============*/
+  /* login with GITHUB ============*/
+
+  const githubLogin=()=>{
+    return signInWithPopup(auth,githubprovider)
+  }
   /* ===========onAUTH STATE CHANGE======== */
 
   useEffect(() => {
@@ -69,7 +73,8 @@ const [loading,setLoading]=useState(true)
     createUser,
     googleLogin,
     logOut,
-    login
+    login,
+    githubLogin
   };
 
   return (

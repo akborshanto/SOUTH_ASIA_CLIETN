@@ -12,6 +12,7 @@ import Login from "../pages/login/Login";
 import Regester from "../pages/Regester/Regester";
 import PrivateRoute from "../protectedRoute/PrivateRoute";
 import ViewDetail from "../component/viewDetail/ViewDetail";
+import UpdateSpot from "../protectedRoute/updateSpot/UpdateSpot";
 
   export const router = createBrowserRouter([
     {
@@ -53,6 +54,13 @@ element:<Login></Login>
   <ViewDetail></ViewDetail>
   </PrivateRoute>
   ,loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
+},{
+  path:"/updateSpot/:id",
+  element:<PrivateRoute>
+  
+  <UpdateSpot></UpdateSpot>
+  </PrivateRoute>,
+  loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
 }
 
       ]
