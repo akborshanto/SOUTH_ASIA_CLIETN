@@ -4,6 +4,8 @@ import UseTitle from '../../hook/useTitle/UseTitle'
 import HomeSlider from './slider/HomeSlider'
 import TouristSpot from './TouristSpots/TouristSpot'
 import CountriesSection from './countries-section/CountriesSection'
+import About from './about/About'
+import BestPlace from './bestPlaces/BestPlace'
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
 
 <TouristSpot></TouristSpot>
 <CountriesSection></CountriesSection>
+<About></About>
+<BestPlace></BestPlace>
     </div>
   )
 }
