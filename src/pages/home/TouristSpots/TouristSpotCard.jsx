@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const TouristSpotCard = ({tour}) => {
 
 const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name}=tour;
-console.log(_id)
+
   return (
     <div className=''>
       
@@ -13,7 +13,7 @@ console.log(_id)
 	<img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
 	<div className="flex flex-col justify-between p-6 space-y-8">
 		<div className="space-y-2">
-		<h1>{_id}</h1>
+
 			<h2 className="text-3xl font-semibold tracking-wide">{country_Name}</h2>
 			<p className="text-gray-100">{ToureistName}</p>
 			<p>{totaVisitorsPerYear}</p>

@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Update = () => {
   const loader=useLoaderData()
   const {id}=useParams()
-console.log(id)
+
+
   const updateSpot=(e)=>{
+    
     e.preventDefault()
+
     const form=e.target;
     const photo=form.photo.value;
     const country_Name=form.country_Name.value;
@@ -21,6 +24,8 @@ console.log(id)
     const totaVisitorsPerYear=form.totaVisitorsPerYear.value;
 
     const AddSpot={photo,country_Name,ToureistName,location,description,average_cost,seasonality,travel_time,totaVisitorsPerYear}
+    
+
 /* update  */
 fetch(`http://localhost:5000/updateSpot/${id}`,{
   method:"PUT",
@@ -30,6 +35,8 @@ fetch(`http://localhost:5000/updateSpot/${id}`,{
 })
 .then(res=>res.json())
 .then(data=> {
+
+
   toast("success fully")
 })
 

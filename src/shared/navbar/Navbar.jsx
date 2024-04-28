@@ -1,9 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../hook/useContext/UseContext'
 import { CiUser } from "react-icons/ci";
 const Navbar = () => {
+/* theme */
+const[theme,setTheme]=useState('light')
 
+useEffect(()=>{
+localStorage.setItem('theme',theme)
+const localTheme=localStorage.getItem('theme')
+document.querySelector('html').setAttribute('data-theme',localTheme)
+
+
+},[theme])
+
+const handleTheme=e=>{
+
+if(e.target.checked){
+  setTheme("synthwave")
+}else{
+  setTheme("light")
+}
+}
+console.log(theme)
 const {user,logOut}=useContext(AuthContext)
 console.log(user)
 
@@ -49,6 +68,12 @@ const handleLogout=()=>{
 </ul>
     </div>
     <div className="navbar-end">
+    <div className="form-control w-52">
+    <label className="cursor-pointer label">
+      <span className="label-text">Remember me</span> 
+      <input type="checkbox" className="toggle toggle-secondary" onClick={handleTheme} />
+    </label>
+  </div>
 {user? <img src='https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?t=st=1714103071~exp=1714106671~hmac=2232a3af0dfc98faf89af349f906681c2d6ac38b7a2ac969a16bda89cf72c04d&w=740' className="w-20 rounded-full"  title={user?.displayName}></img>:<CiUser />}
 {
 user?   <button className="btn btn-outline btn-success" onClick={logOut}>LOGOUT</button>:
