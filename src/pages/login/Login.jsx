@@ -28,28 +28,13 @@ console.log(result)
 	toast.error("Please Give the Correct Email & Password.")
 })
 
-/* github login */
-
-// useEffect(()=>{
-// if(user){
-// navigate(location.state)
-// }
-
-
-// },[user])
-
     /* ========Password validation=========== */
     if (password.length < 6) {
       return toast.error(" PASSEORD Length must be at least 6 character");
     }
-    // if (!/^(?=.*[A-Z]).{8,}$/.test(password)) {
-    //   return toast.error("Must have an Uppercase letter in the password");
-    // }
-    // if (!/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/.test(password)) {
-    //   return toast("Must have a Lowercase letter in the password");
-    // }
+    
    
-  }//;https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?t=st=1714103071~exp=1714106671~hmac=2232a3af0dfc98faf89af349f906681c2d6ac38b7a2ac969a16bda89cf72c04d&w=740
+  }
 /* =========google login ===*/
 const handleGoogle=()=>{
 	googleLogin()
@@ -60,9 +45,9 @@ const handleGoogle=()=>{
 }
   return (
     <div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-900 text-gray-100">
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#6ab8b4] text-white mx-auto my-8">
         <ToastContainer position="top-center" />
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+        <h1 className="text-2xl font-bold text-center">Login  Your Account</h1>
         <form
           noValidate=""
           action=""
@@ -70,8 +55,8 @@ const handleGoogle=()=>{
           onSubmit={handleLoging}
         >
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block text-gray-400">
-              Username
+            <label htmlFor="username" className="block  ">
+            Email
             </label>
             <input
               required
@@ -79,11 +64,12 @@ const handleGoogle=()=>{
               name="email"
               id="username"
               placeholder="Username"
-              className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+              className="w-full px-4 py-3 rounded-md border-gray-700  text-gray-400 focus:border-violet-400"
             />
           </div>
           <div className="space-y-1 text-sm">
-            <label className="input input-bordered flex items-center gap-2">
+          Password
+            <label className="input input-bordered flex items-center gap-2 text-black">
               <p onClick={() => setShow(!show)}>
                 {show ? <FaEye /> : <FaEyeSlash />}
               </p>
@@ -97,13 +83,13 @@ const handleGoogle=()=>{
               />
             </label>
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400">
-            Sign in
+          <button className="block w-full p-3 text-center rounded-sm bg-[#AADDE5] text-white ">
+            LOGIN
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
-          <p className="px-3 text-sm text-gray-400">
+          <p className="px-3 text-sm text-gray-500">
             Login with social accounts
           </p>
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
@@ -129,14 +115,14 @@ const handleGoogle=()=>{
             </svg>
           </button>
         </div>
-        <p className="text-xs text-center sm:px-6 text-gray-400">
+        <p className="text-xs text-center sm:px-6 text-gray-500">
           Don't have an account?
           <Link to="/register">
             {" "}
             <a
               rel="noopener noreferrer"
               href="#"
-              className="underline text-gray-100"
+              className="underline text-blue-600 text-xl"
             >
               Sign up
             </a>{" "}
