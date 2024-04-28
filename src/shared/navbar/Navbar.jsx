@@ -72,12 +72,12 @@ const handleLogout=()=>{
         </div>
         <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow border-none rounded-box w-52"
+        className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow border-none rounded-box w-52 text-green-400"
       >
         {links}
       </ul>
       </div>
-      <button className="btn btn-outline btn-success  text-14px ">SOUTHEAST <span>ASIA</span></button>
+      <button className="btn btn-outline btn-success  text-14px lg:text2xl ">SOUTHEAST <span>ASIA</span></button>
 
     </div>
     <div className="navbar-center hidden lg:flex">
@@ -85,7 +85,7 @@ const handleLogout=()=>{
   </div>
     <div className="navbar-end">
 
-      <input type="checkbox" className="toggle toggle-success mx-6" onClick={handleTheme} />
+      <input type="checkbox" className="toggle toggle-success mx-3 " onClick={handleTheme} />
     
       <button className="bg-gradient-to-r from-teal-400 to-gray-800 rounded-full p-0 lg:p-2  mr-2 lg:mr-4 text-white">
       {user ? (

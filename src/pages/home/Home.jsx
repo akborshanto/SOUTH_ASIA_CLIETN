@@ -7,7 +7,7 @@ import CountriesSection from './countries-section/CountriesSection'
 
 const Home = () => {
   return (
-    <div>
+    <div className='p-4'>
 
 
    
