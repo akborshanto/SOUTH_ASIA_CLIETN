@@ -1,0 +1,35 @@
+[
+    {
+        "img": "https://example.com/bangkok.jpg",
+        "countryName": "Bangladesh",
+        "description": "Bangladesh is an under-devoloped nation. Despite rapid economic growth, poverty remains a major issue Thai cuisine and vibrant nightlife."
+      },{
+        "img": "https://example.com/bangkok.jpg",
+        "countryName": "Thailand",
+        "description": "Bangkok, the capital city of Thailand, is known for its vibrant street life, ornate shrines, and bustling markets. Visitors can explore iconic landmarks such as the Grand Palace, Wat Arun, and Wat Pho, as well as enjoy delicious Thai cuisine and vibrant nightlife."
+      },{
+        "img": "https://example.com/ubud.jpg",
+        "countryName": "Indonesia",
+        "description": "Ubud, located in the heart of Bali, Indonesia, is known for its lush rice terraces, traditional crafts, and spiritual atmosphere. Visitors can explore the Ubud Monkey Forest, visit ancient temples, and enjoy yoga retreats and traditional Balinese dance performances."
+      },{
+        "img": "https://example.com/langkawi.jpg",
+        "countryName": "Malaysia",
+        "description": "Langkawi, an archipelago in Malaysia's Andaman Sea, is known for its pristine beaches, lush rainforests, and stunning natural landscapes. Visitors can enjoy activities such as island hopping, cable car rides, and exploring the underwater world while snorkeling or diving."
+      },
+      {
+        "img": "https://example.com/boracay.jpg",
+        "countryName": "Cambodia",
+        "description": "Boracay, a small island in the Philippines, is famous for its white sand beaches, crystal-clear waters, and vibrant nightlife. Visitors can relax on the beach, try water sports such as kiteboarding and windsurfing, and enjoy delicious seafood dishes at beachfront restaurants."
+      }
+            ,
+      {
+        "img": "https://example.com/marina_bay_sands.jpg",
+        "countryName": "Singapore",
+        "description": "Marina Bay Sands is an iconic integrated resort in Singapore, known for its stunning architecture, luxury accommodations, and world-class entertainment options. Visitors can enjoy breathtaking views from the observation deck, relax by the infinity pool, and explore the shopping and dining options within the complex."
+      }
+      
+
+
+
+
+]

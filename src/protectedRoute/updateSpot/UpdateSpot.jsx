@@ -1,10 +1,11 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Update = () => {
   const loader=useLoaderData()
-  console.log(loader)
+  const {id}=useParams()
+console.log(id)
   const updateSpot=(e)=>{
     e.preventDefault()
     const form=e.target;
@@ -20,20 +21,32 @@ const Update = () => {
     const totaVisitorsPerYear=form.totaVisitorsPerYear.value;
 
     const AddSpot={photo,country_Name,ToureistName,location,description,average_cost,seasonality,travel_time,totaVisitorsPerYear}
-
-    /* send data to the sereber */
-/* send data to the sereber */
-fetch(`http://localhost:5000/addSpot/${loader._id}`,{
+/* update  */
+fetch(`http://localhost:5000/updateSpot/${id}`,{
   method:"PUT",
   headers:{'content-type':'application/json'},
   body:JSON.stringify(AddSpot)
-})
-.then(res=>res.json())
-.then(data=>{
-  console.log(data)
-  toast("successfully Added Spot")
 
 })
+.then(res=>res.json())
+.then(data=> {
+  toast("success fully")
+})
+
+
+    /* send data to the sereber */
+/* send data to the sereber */
+// fetch(`http://localhost:5000/addSpot/${id}`,{
+//   method:"PUT",
+//   headers:{'content-type':'application/json'},
+//   body:JSON.stringify(AddSpot)
+// })
+// .then(res=>res.json())
+// .then(data=>{
+//   console.log(data)
+//   toast("successfully Added Spot")
+
+// })
       }
   return (
     <div>

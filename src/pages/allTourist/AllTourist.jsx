@@ -3,7 +3,6 @@ import { Link, useLoaderData } from 'react-router-dom'
 
 const AllTourist = () => {
   const loader=useLoaderData()
-  console.log(loader)
   return (
     <div>
 
