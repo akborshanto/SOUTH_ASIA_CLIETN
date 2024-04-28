@@ -15,7 +15,7 @@ fetch(`http://localhost:5000/singleSpot/${id}`)
 .then(data=>setSPot(data))
 
   },[id])
-  const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name}=spot;
+  const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name,seasonality}=spot;
 
   return (
     <div className='py-16'>
@@ -42,11 +42,12 @@ fetch(`http://localhost:5000/singleSpot/${id}`)
 
 	
 		
-			<h3 >Location:<span className='text-gray-600 text-2xl text-2xl'>{location}</span></h3>
+			<h3 >Location:<span className='text-gray-600 text-xl lg:text-2xl'>{location}</span></h3>
+			<h3 >Seasonality:<span className='text-gray-600 text-xl lg:text-2xl'>{seasonality}</span></h3>
       
 			<h3 >Description:<span className='text-gray-600 text-xl'>{description}</span></h3>
-      <h2>Name:<span className='text-gray-600 text-2xl'>{Name}</span></h2>
-      <h2>Email:<span className='text-gray-600 text-2xl'>{Email}</span></h2>
+      <h2>Name:<span className='text-gray-600 text-xl lg:text-2xl'>{Name}</span></h2>
+      <h2>Email:<span className='text-gray-600 text-xl lg:text-2xl'>{Email}</span></h2>
 
       
       </div>
