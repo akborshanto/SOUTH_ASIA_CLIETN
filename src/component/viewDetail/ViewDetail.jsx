@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
+import UseTitle from './../../hook/useTitle/UseTitle';
 
 const ViewDetail = () => {
 
@@ -17,17 +18,43 @@ fetch(`http://localhost:5000/singleSpot/${id}`)
   const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name}=spot;
 
   return (
-    <div>
-    <div className="max-w-xs rounded-md shadow-md bg-gray-900 text-gray-100">
-    <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
-    <div className="flex flex-col justify-between p-6 space-y-8">
-      <div className="space-y-2">
-        <h2 className="text-3xl font-semibold tracking-wide">{country_Name}</h2>
-        <p className="text-gray-100">{description}</p>
+    <div className='py-16'>
+    <div className="max-w-lg p-4 shadow-md bg-gradient-to-r from-teal-600 to-teal-300 text-white p-5 mx-auto rounded-lg">
+    <UseTitle heading="VIEW DETAILS OF TOURIST"></UseTitle>
+	<div className="flex justify-between pb-4 border-bottom">
+		<div className="flex items-center">
+			<a rel="noopener noreferrer" href="#" className="mb-0 capitalize text-gray-100 text-2xl">CountryName:{country_Name}</a>
+		</div>
+		
+	</div>
+	<div className="space-y-4">
+		<div className="space-y-2">
+			<img src={photo} alt="" className="block object-cover object-center w-full rounded-md h-72 bg-gray-500" />
+
+		</div>
+		<div className="flex flex-col justify-between p-6 space-y-8 ">
+		<div className="space-y-2">
+
+			<h3 className="text-white"> TouristName:<span className='text-gray-600 text-2xl'>{ToureistName}</span></h3>
+      <h3>TotalvisitorPerYear:<span className='text-gray-600 text-xl'>{totaVisitorsPerYear}</span></h3>
+
+			<h3>Trave_Time::<span className='text-gray-600 text-2xl text-xl'>{travel_time}</span></h3>
+
+	
+		
+			<h3 >Location:<span className='text-gray-600 text-2xl text-2xl'>{location}</span></h3>
+      
+			<h3 >Description:<span className='text-gray-600 text-xl'>{description}</span></h3>
+      <h2>Name:<span className='text-gray-600 text-2xl'>{Name}</span></h2>
+      <h2>Email:<span className='text-gray-600 text-2xl'>{Email}</span></h2>
+
+      
       </div>
-      <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Read more</button>
-    </div>
-  </div>
+      
+ 
+	</div>
+	</div>
+</div>
 
 
 
