@@ -1,9 +1,19 @@
-import React from 'react'
+import { setItem } from 'localforage';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const TouristSpotCard = ({tour}) => {
 
 const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name}=tour;
+// const [internationSpot,sestInternationalSpot]=useState([])
+
+// useEffect(()=>{
+
+// fetch('http://localhost:5000/getAllInternationalData')
+// .then(res=>res.json())
+// .then(data=>(data))
+
+// },[])
 
   return (
     <div className=''>

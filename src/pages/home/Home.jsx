@@ -21,6 +21,7 @@ const Home = () => {
 <CountriesSection></CountriesSection>
 <About></About>
 <BestPlace></BestPlace>
+<CountriesSection></CountriesSection>
     </div>
   )
 }
