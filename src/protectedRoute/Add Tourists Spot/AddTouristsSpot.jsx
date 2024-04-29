@@ -39,7 +39,27 @@ const AddTouristsSpot = () => {
 
 console.log(AddSpot)
 
-/* POST METHOD✅✅💛❤✅💛❤ */
+
+
+/* ALL DATA */
+fetch('http://localhost:5000/allSpot',{
+
+
+method:"POST",
+headers:{'content-type':'application/json'},
+body:JSON.stringify(AddSpot)
+})
+.then(res=>res.json())
+.then(data=>{
+if(data?.insertedId){
+
+toast.success("SUCCESSFULLY ADDED ")
+}
+
+})
+
+
+/* POST METHOD MY LIST✅✅💛❤✅💛❤ */
 
 fetch('http://localhost:5000/addTourism',{
 
@@ -58,34 +78,7 @@ toast.success("SUCCESSFULLY ADDED ")
 })
 
 
-/* 🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩 */
-/*  */
-    /* send data to the sereber */
-    // fetch("http://localhost:5000/addSpot", {
-    //   method: "POST",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify(AddSpot),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     toast("successfully Added Spot");
-    //   });
 
-
-// /* ===========MYLIST============= */
-// fetch('http://localhost:5000/addPD',{
-
-// method:"POST",
-// headers:{"Content-Type": "application/json"},
-// body:JSON.stringify(AddSpot)
-// })
-// .then(res=>res.json())
-// .then(data=>console.log(data))
-
-
-
-
-//
 
 };
 

@@ -3,10 +3,13 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllTourist = () => {
 
-const [loader,setLoader]=useState([])
-fetch('http://localhost:5000/addTourism')
-.then(res=>res.json())
-.then(data=>setLoader(data))
+
+  const loader=useLoaderData()
+//   console.log(loaders)
+// const [loader,setLoader]=useState([])
+// fetch('http://localhost:5000/addTourism')
+// .then(res=>res.json())
+// .then(data=>setLoader(data))
 
 
 

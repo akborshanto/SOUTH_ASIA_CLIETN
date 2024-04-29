@@ -25,7 +25,7 @@ element:<Home></Home>,
 },
 {path:'/allTourist',
 element:<AllTourist></AllTourist>,
-loader:()=>fetch('http://localhost:5000/addSpot')
+loader:()=>fetch('http://localhost:5000/allSpot')
 },
 
 {
