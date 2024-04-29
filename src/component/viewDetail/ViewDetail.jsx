@@ -6,15 +6,20 @@ const ViewDetail = () => {
 
   const {id}=useParams()
   const [spot,setSPot]=useState({})
-  console.log(id)
-
   useEffect(()=>{
 
-fetch(`http://localhost:5000/singleSpot/${id}`)
-.then(res=>res.json())
-.then(data=>setSPot(data))
 
+	fetch(`http://localhost:5000/viewDetail/${id}`)
+
+.then(res=>res.json())
+.then(data=>{
+	setSPot(data)
+	//console.log(data)
+})
   },[id])
+console.log(id)
+
+
   const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name,seasonality}=spot;
 
   return (

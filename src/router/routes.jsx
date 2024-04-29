@@ -37,7 +37,7 @@ loader:()=>fetch('http://localhost:5000/allSpot')
 {
     path:'/myList',
     element:<PrivateRoute><MyList></MyList></PrivateRoute>,
-    loader:()=>fetch('http://localhost:5000/addSpot')
+   // loader:()=>fetch('http://localhost:5000/addSpot')
 },
 {
 path:"/login",
@@ -53,7 +53,7 @@ element:<Login></Login>
   element:<PrivateRoute>
   <ViewDetail></ViewDetail>
   </PrivateRoute>
-  ,loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
+  ,//loader:({params})=>fetch(`http://localhost:5000/allSpot/${params.id}`)
 },{
   path:"/updateSpot/:id",
   element:<PrivateRoute>
