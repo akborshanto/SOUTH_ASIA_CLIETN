@@ -6,6 +6,20 @@ import UseTitle from "../../hook/useTitle/UseTitle";
 const Update = () => {
   const loader = useLoaderData();
   const { id } = useParams();
+  const [updateTour, setUpdateTour] = useState({});
+
+  useEffect(() => {
+
+    fetch(`http://localhost:5000/singleUpdate/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUpdateTour(data);
+      });
+  }, [id]);
+
+
+
 
   const updateSpot = (e) => {
     e.preventDefault();
@@ -34,19 +48,36 @@ const Update = () => {
       totaVisitorsPerYear,
     };
 
+
+fetch(`http://localhost:5000/AllUpdate/${id}`,{
+  method:"PUT",
+  headers:{'content-type':'application/json'},
+  body:JSON.stringify(AddSpot)
+})
+
+
+
+
+
+
+
+
+
+
+    /* .✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅ */
     /* update  */
-    fetch(`http://localhost:5000/updateSpot/${id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(AddSpot),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          console.log(data);
-          toast("success fully");
-        }
-      });
+    // fetch(`http://localhost:5000/updateSpot/${id}`, {
+    //   method: "PUT",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify(AddSpot),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.modifiedCount > 0) {
+    //       console.log(data);
+    //       toast("success fully");
+    //     }
+    //   });
 
     /* send data to the sereber */
     /* send data to the sereber */
@@ -86,7 +117,7 @@ const Update = () => {
                 placeholder="photo"
                 className=" w-full input input-bordered"
                 required
-                defaultValue={loader.photo}
+                defaultValue={updateTour.photo}
               />
             </div>
             <div className="col-span-full sm:col-span-3">
@@ -99,7 +130,7 @@ const Update = () => {
                 placeholder="ToureistName"
                 className="  w-full input input-bordered"
                 required
-                defaultValue={loader.ToureistName}
+                defaultValue={updateTour.ToureistName}
               />
             </div>
             <div className="col-span-full sm:col-span-3 ">
@@ -112,7 +143,7 @@ const Update = () => {
                 placeholder="country_Name"
                 className="w-full input input-bordered"
                 required
-                defaultValue={loader.country_Name}
+                defaultValue={updateTour.country_Name}
               />
             </div>
 
@@ -126,7 +157,7 @@ const Update = () => {
                 placeholder="description"
                 className=" w-full input input-bordered"
                 required
-                defaultValue={loader.description}
+                defaultValue={updateTour.description}
               />
             </div>
             <div className="form-control">
@@ -136,7 +167,7 @@ const Update = () => {
               <input
                 name="location"
                 type="text"
-                defaultValue={loader.location}
+                defaultValue={updateTour.location}
                 placeholder="location"
                 className="input input-bordered"
                 required
@@ -152,7 +183,7 @@ const Update = () => {
                 placeholder="average_cost"
                 className="w-full input input-bordered"
                 required
-                defaultValue={loader.average_cost}
+                defaultValue={updateTour.average_cost}
               />
             </div>
             <div className="col-span-full sm:col-span-2">
@@ -165,7 +196,7 @@ const Update = () => {
                 placeholder="seasonality"
                 className=" w-full input input-bordered"
                 required
-                defaultValue={loader.seasonality}
+                defaultValue={updateTour.seasonality}
               />
             </div>
             <div className="col-span-full sm:col-span-2">
@@ -178,7 +209,7 @@ const Update = () => {
                 placeholder="travel_time"
                 className=" w-full input input-bordered"
                 required
-                defaultValue={loader.travel_time}
+                defaultValue={updateTour.travel_time}
               />
             </div>
             <div className="col-span-full sm:col-span-2">
@@ -191,7 +222,7 @@ const Update = () => {
                 placeholder="totaVisitorsPerYear"
                 className=" w-full input input-bordered"
                 required
-                defaultValue={loader.totaVisitorsPerYear}
+                defaultValue={updateTour.totaVisitorsPerYear}
               />
             </div>
           </div>

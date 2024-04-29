@@ -11,6 +11,7 @@ const Login = () => {
   const { login ,googleLogin,user, githubLogin} = useContext(AuthContext);
 
 const location=useLocation()
+console.log(location)
 const navigate=useNavigate()
   /* ========LOGIN===== */
   const handleLoging = (e) => {
@@ -21,8 +22,7 @@ const navigate=useNavigate()
 /* logint */
 login(email,password)
 .then(result=>{
-navigate(location.state)
-
+navigate(location?.state ?location.state:"/")
 console.log(result)
 })
 .catch(error=>{

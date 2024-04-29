@@ -77,7 +77,24 @@ console.log(tour)
     <div className="">
       <UseTitle heading="MY ADD TOURIST  LIST "></UseTitle>
       <div className="overflow-x-auto my-8">
-        <table className="table italic">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    {    <table className="table italic">
           {/* head */}
           <thead>
             <tr>
@@ -143,7 +160,7 @@ console.log(tour)
               </tr>
             </tbody>
           ))}
-        </table>
+        </table>}
       </div>
     </div>
   );
