@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from './../../hook/useContext/UseContext';
+import UseTitle from '../../hook/useTitle/UseTitle';
 
 const MyList = () => {
   const {user}=useContext(AuthContext)
@@ -46,33 +47,37 @@ fetch(`http://localhost:5000/addSpot/${id}`,{
 
 }
   return (
-    <div>
-    <div className="overflow-x-auto">
-    <table className="table">
+
+    
+    <div className=''>
+ <UseTitle heading='MY ADD TOURIST  LIST ' ></UseTitle>
+    <div className="overflow-x-auto my-8" >
+    <table className="table italic">
       {/* head */}
-      <thead>
+      <thead >
         <tr>
           <th>
-            <label>
-              <input type="checkbox" className="checkbox" />
-            </label>
+       
           </th>
-          <th>Name</th>
-          <th>Country_Name</th>
-          <th>Travel_time</th>
+          <th className='text-xl font-extralight'>COUNTRY </th>
+          <th className='text-xl font-extralight'>TRAVEL TIME</th>
+          <th className='text-xl font-extralight'>TOTAL VISITOR</th>
+   
+          <th className='text-xl font-extralight'>TOTAL VISITOR</th>
+   
+          <th className='text-xl font-extralight'>DETAILS</th>
+ 
           <th></th>
         </tr>
       </thead>
 {
 
-item.map(list=>
-  <tbody key={Math.random()}>
+item?.map(list=>
+  <tbody key={Math.random()} className=' font-se '>
     {/* row 1 */}
     <tr>
       <th>
-        <label>
-          <input type="checkbox" className="checkbox" />
-        </label>
+ 
       </th>
 
 
@@ -80,29 +85,31 @@ item.map(list=>
 
       <td>
         <div className="flex items-center gap-3">
-          <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img src={list.photo} alt="Avatar Tailwind CSS Component" />
-            </div>
+        <div className="avatar">
+  <div className="w-24 mask mask-hexagon">
+  <img src={list?.photo} alt="Avatar Tailwind CSS Component" />
+  </div>
+ 
           </div>
           <div>
-            <div className="font-bold">{list.ToureistName}</div>
-            <div className="text-sm opacity-50">{list.totaVisitorsPerYear}</div>
+            <div className="font-bold text-xl">{list?.country_Name}</div>
+            <div className="text-sm opacity-50">{list?.location}</div>
           </div>
         </div>
       </td>
       <td>
-      {list.country_Name}
+  
         <br/>
-        <span className="badge badge-ghost badge-sm">{list.location}</span>
+        <span className=" text-2xl">{list?.travel_time}</span>
       </td>
-      <td>{list.travel_time}</td>
+      <td className='text-2xl'>{list.totaVisitorsPerYear}</td>
+      <td className='text-2xl'>{list?.average_cost}</td>
       <th>
   <Link to={`/updateSpot/${list._id}`}>
-  <button className="btn btn-ghost btn-xs">Update</button> <br />
+  <button className="btn hover:bg-[#AADDE5] hover:transition-shadow text-white bg-blue-600 my-4 ">Update</button> <br />
   </Link>
   <Link>
-  <button className="btn btn-ghost btn-xs" onClick={()=>handleDelete(list._id)}>Delete</button> <br />
+  <button className="btn hover:bg-[#AADDE5] hover:transition-shadow text-white bg-red-600   " onClick={()=>handleDelete(list._id)}>Delete</button> <br />
   </Link>
 
       
@@ -116,6 +123,11 @@ item.map(list=>
 
     </table>
   </div>
+
+
+
+
+  
     </div>
   )
 }

@@ -7,14 +7,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+
 //import './styles.css';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const HomeSlider = () => {
+
   return (
     <div>
+  
     <Swiper
     spaceBetween={30}
     centeredSlides={true}
