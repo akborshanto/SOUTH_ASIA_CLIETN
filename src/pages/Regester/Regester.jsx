@@ -8,14 +8,15 @@ import { FaEyeSlash } from "react-icons/fa";
 const Regester = () => {
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
-  const { createUser } = useContext(AuthContext);
-  console.log(createUser);
+  const { createUser ,updateProfiles} = useContext(AuthContext);
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.username.value;
     const email = form.Email.value;
-    const photo = form.Photo.value;
+    const img = form.Photo.value;
     const password = form.password.value;
 
     /* ========Password validation=========== */
@@ -32,6 +33,9 @@ const Regester = () => {
     /* ===========CREATE A USER================= */
     createUser(email, password)
       .then((res) => {
+        updateProfiles(name,img)
+        .then(res=>console.log(res.user))
+        .catch(err=>console.log(err))
         toast.success("SUCCESFULLY REGESTER");
       })
       .catch((err) => console.log(err));

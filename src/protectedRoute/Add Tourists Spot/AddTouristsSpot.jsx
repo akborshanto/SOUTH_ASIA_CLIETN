@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseTitle from './../../hook/useTitle/UseTitle';
+import { AuthContext } from '../../hook/useContext/UseContext';
 const AddTouristsSpot = () => {
 
-
+const {user}=useContext(AuthContext)
+console.log(user.email)
   const addTouristSpot=(e)=>{
 e.preventDefault()
+const email=user.email;
 const form=e.target;
 const photo=form.photo.value;
 const country_Name=form.country_Name.value;
@@ -20,7 +23,7 @@ const travel_time=form.travel_time.value;
 const totaVisitorsPerYear=form.totaVisitorsPerYear.value;
 const Email=form.Email.value;
 const Name=form.Name.value;
-const AddSpot={photo,country_Name,ToureistName,location,description,average_cost,seasonality,travel_time,totaVisitorsPerYear,Email,Name}
+const AddSpot={photo,country_Name,ToureistName,location,description,average_cost,seasonality,travel_time,totaVisitorsPerYear,Email,Name,email}
 console.log(AddSpot)
 /* send data to the sereber */
 fetch('http://localhost:5000/addSpot',{

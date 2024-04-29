@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase.config";
@@ -61,10 +62,27 @@ const [loading,setLoading]=useState(true)
   }, []);
 
 
+
+
+/* update propile */
+const updateProfiles=(name,image)=>{
+setLoading(true)
+  return updateProfile(auth.currentUser, 
+   // displayName: name, photoURL:image
+   setUser({...user, displayName: name, photoURL:image})
+    // Profile updated!
+    // ...
+  ).catch((error) => {
+    // An error occurred
+    // ...
+  });
+
+}
   /* ==========LOGOUT======= */
   const logOut=()=>{
     return signOut(auth)
   }
+
   /* all context data */
   const authInfo = {
     user,
@@ -75,7 +93,8 @@ const [loading,setLoading]=useState(true)
     logOut,
     login,
     githubLogin
-  };
+,
+updateProfiles  };
 
   return (
     <div>

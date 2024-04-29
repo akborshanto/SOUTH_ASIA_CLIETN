@@ -23,7 +23,7 @@ if(e.target.checked){
   setTheme("light")
 }
 }
-console.log(theme)
+
 const {user,logOut}=useContext(AuthContext)
 console.log(user)
 

@@ -4,7 +4,7 @@ import UseTitle from '../../../hook/useTitle/UseTitle'
 const About = () => {
   return (
     <div className='py-6'>
-    <UseTitle heading="ABOUT" title="It is a place of one of the world's oldest civilizations and also, currently, one of the most vibrant and important centers of global culture, " ></UseTitle>
+   
     <section className=" bg-[#6ab8b4] text-white rounded-lg">
 	<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 		<div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

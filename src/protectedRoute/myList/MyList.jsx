@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
+import { AuthContext } from './../../hook/useContext/UseContext';
 
 const MyList = () => {
+  const {user}=useContext(AuthContext)
+  
+  console.log(user)
   const loader=useLoaderData()
-  const [user,setUser]=useState(loader)
+  const [users,setUser]=useState(loader)
   //const {_id,photo,country_Name,ToureistName,location,travel_time,description,average_cost,totaVisitorsPerYear,Email,Name}=spot;
 const handleDelete=(id)=>{
 
@@ -50,7 +54,7 @@ fetch(`http://localhost:5000/addSpot/${id}`,{
       </thead>
 {
 
-user.map(list=>
+users.map(list=>
   <tbody key={Math.random()}>
     {/* row 1 */}
     <tr>
