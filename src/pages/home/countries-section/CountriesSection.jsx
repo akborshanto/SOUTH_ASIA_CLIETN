@@ -11,7 +11,7 @@ fetch('countries.json')
 
 
 },[])
-  console.log(country)
+
   return (
     <div>
 <UseTitle heading="COUNRIES SECTION" title="Malaysia represents fantastic value for money at almost all levels."></UseTitle>

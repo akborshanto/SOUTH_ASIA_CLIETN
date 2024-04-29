@@ -1,21 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTourist = () => {
-  const loader = useLoaderData();
+
+const [loader,setLoader]=useState([])
+fetch('http://localhost:5000/addTourism')
+.then(res=>res.json())
+.then(data=>setLoader(data))
+
+
+
+
   return (
     <div>
+
+
+
+
+
+
+
+
+
+    
   <div className="text-center">
   <div className="dropdown text-center mb-8">
   <div tabIndex={0} role="button" className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center ">
    SORT OF  Averest Cost
   </div>
+
+
+
   <ul
     tabIndex={0}
     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
   >
     <li>
-     <a href="" className="text-gray-400">ASENDING</a>
+     <a href="" className="text-gray-400" >ASENDING</a>
     </li>
     <li>
       <a>DESENDING</a>

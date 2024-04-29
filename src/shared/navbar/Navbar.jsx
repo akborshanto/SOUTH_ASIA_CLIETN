@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../hook/useContext/UseContext'
 import { CiUser } from "react-icons/ci";
 import { IoMdContact } from "react-icons/io";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
 /* theme */
 const[theme,setTheme]=useState('light')
@@ -25,7 +27,7 @@ if(e.target.checked){
 }
 
 const {user,logOut}=useContext(AuthContext)
-console.log(user)
+
 
 /* LOG OUT */
 const handleLogout=()=>{
@@ -77,8 +79,13 @@ const handleLogout=()=>{
         {links}
       </ul>
       </div>
-      <button className="btn btn-outline btn-success  text-14px lg:text2xl ">SOUTHEAST <span>ASIA</span></button>
+      <button className="btn btn-outline btn-success  text-14px lg:text2xl "    data-tooltip-id="my-tooltip"
+      data-tooltip-content="SOUTHEAST ASIA"
+      data-tooltip-place="top">TOURISM<span>ASIA</span></button>
+    
 
+ 
+    <Tooltip id="my-tooltip" />
     </div>
     <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">{links}</ul>

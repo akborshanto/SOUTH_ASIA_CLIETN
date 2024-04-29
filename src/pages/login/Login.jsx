@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
+
 const Login = () => {
   const [show, setShow] = useState(false);
   const { login ,googleLogin,user, githubLogin} = useContext(AuthContext);
@@ -43,10 +44,25 @@ const handleGoogle=()=>{
 	})
 	.then(err=>console.log(err))
 }
+
+
+
+
+const handle=(e)=>{
+  console.log(e.target.value)
+}
+
   return (
     <div>
+
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#6ab8b4] text-white mx-auto my-8">
         <ToastContainer position="top-center" />
+
+   
+
+
+
+
         <h1 className="text-2xl font-bold text-center">Login  Your Account</h1>
         <form
           noValidate=""

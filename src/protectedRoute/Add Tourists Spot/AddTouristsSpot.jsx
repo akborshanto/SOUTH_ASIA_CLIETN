@@ -5,7 +5,7 @@ import UseTitle from "./../../hook/useTitle/UseTitle";
 import { AuthContext } from "../../hook/useContext/UseContext";
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.email);
+
   const addTouristSpot = (e) => {
     e.preventDefault();
     const email = user.email;
@@ -36,36 +36,63 @@ const AddTouristsSpot = () => {
       Name,
       email,
     };
- 
-    /* send data to the sereber */
-    fetch("http://localhost:5000/addSpot", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(AddSpot),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast("successfully Added Spot");
-      });
 
+console.log(AddSpot)
 
-/* ===========MYLIST============= */
-fetch('http://localhost:5000/addPD',{
+/* POST METHOD✅✅💛❤✅💛❤ */
+
+fetch('http://localhost:5000/addTourism',{
+
 
 method:"POST",
-headers:{"Content-Type": "application/json"},
+headers:{'content-type':'application/json'},
 body:JSON.stringify(AddSpot)
 })
 .then(res=>res.json())
-.then(data=>console.log(data))
+.then(data=>{
+if(data?.insertedId){
+
+toast.success("SUCCESSFULLY ADDED ")
+}
+
+})
+
+
+/* 🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩 */
+/*  */
+    /* send data to the sereber */
+    // fetch("http://localhost:5000/addSpot", {
+    //   method: "POST",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify(AddSpot),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     toast("successfully Added Spot");
+    //   });
+
+
+// /* ===========MYLIST============= */
+// fetch('http://localhost:5000/addPD',{
+
+// method:"POST",
+// headers:{"Content-Type": "application/json"},
+// body:JSON.stringify(AddSpot)
+// })
+// .then(res=>res.json())
+// .then(data=>console.log(data))
 
 
 
 
+//
 
-  };
+};
+
+
   return (
     <div>
+
       <ToastContainer position="top-center" />
 
       <section className="p-6 bg-[#6ab8b4] text-white">
@@ -77,12 +104,27 @@ body:JSON.stringify(AddSpot)
           className=" text-white container flex flex-col mx-auto space-y-12"
           onSubmit={addTouristSpot}
         >
+
+
+
+
+
+
+
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-[#6ab8b4] text-gray-400">
+
+
+
+
+
+
+
+
             <div className="col-span-full sm:col-span-3">
               <label className="label">
                 <span className="label-text">Photo</span>
               </label>
-              <input
+              <input 
                 name="photo"
                 type="text"
                 placeholder="photo"
@@ -220,8 +262,8 @@ body:JSON.stringify(AddSpot)
 
       {/* ======================================= */}
 
-{/*       <div className="hero min-h-screen">
-          <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen">
+        {/*     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="text-center lg:text-left">
         <h1 className="text-5xl font-bold">ADD TOURIEST SPOT</h1>
         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
@@ -308,8 +350,8 @@ body:JSON.stringify(AddSpot)
           </div>
         </form>
       </div>
-    </div> 
-      </div> */}
+    </div> */}
+      </div>
     </div>
   );
 };
