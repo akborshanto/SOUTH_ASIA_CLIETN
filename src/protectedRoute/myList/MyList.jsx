@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "./../../hook/useContext/UseContext";
 import UseTitle from "../../hook/useTitle/UseTitle";
+import Swal from 'sweetalert2'
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
-
+const [control,setControl]=useState(false)
 const [tour,setTour]=useState([])
 
 
@@ -16,10 +17,89 @@ const [tour,setTour]=useState([])
     setTour(data)
     })
 
-  }, [user]);
+  }, [user,control]);
 
 
-console.log(tour)
+const handleDelete=(id)=>{
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to DELETE this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`http://localhost:5000/delete/${id}`,{
+
+      method:"DELETE"
+      
+      }).then(res=>res.json())
+      .then(data=>{
+        if(data.deletedCount >0){
+
+          setControl(!control)
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your LIST has been deleted.",
+            icon: "success"
+          });
+        
+        }
+  
+
+      })
+
+
+
+
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+//   Swal.fire({
+//     title: "Are you sure?",
+//     text: "You won't be able to DELETE this!",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Yes, delete it!"
+//   })
+// fetch(`http://localhost:5000/delete/${id}`,{
+
+// method:"DELETE"
+
+// })
+// .then(res=>res.json())
+// .then(data=>{
+// if(data.deletedCount >0){
+
+//   setControl(!control)
+//   Swal.fire({
+//     title: "Deleted!",
+//     text: "Your LIST has been deleted.",
+//     icon: "success"
+//   });
+
+// }
+
+
+
+// })
+
+}
 
 
 
@@ -34,6 +114,33 @@ console.log(tour)
 
 
 
+/* =======MY LIST====== */
+
+// useEffect(()=>{
+// fetch(`http://localhost:5000/addPD/${user?.email}`)
+
+// .then(res=>res.json())
+// .then(data=>setItem(data))
+// },[user])
+//✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
+/* ==================🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩============ */
+// const handleDelete = (id) => {
+//   ///make sure delete user
+//   //fetch(`http://localhost:5000/add/${id}`,{
+//   //   method:"DELETE",
+//   // })
+//   // .then(res=>res.json())
+//   // .then(data=> {
+//   //   console.log(data)
+//   //   if(data.deletedCount > 0){
+//   //     alert("SDksdf")
+//   //    console.log('delected succesfful')
+//   //     const reamaingUser=loader.filter(use=>use._id !==id)
+//   //     setUser(reamaingUser)
+//   //   }
+//   // })
+// };
 
 
 
@@ -44,35 +151,6 @@ console.log(tour)
 
 
 
-
-
-  /* =======MY LIST====== */
-
-  // useEffect(()=>{
-  // fetch(`http://localhost:5000/addPD/${user?.email}`)
-
-  // .then(res=>res.json())
-  // .then(data=>setItem(data))
-  // },[user])
-  //✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-
-  /* ==================🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩============ */
-  // const handleDelete = (id) => {
-  //   ///make sure delete user
-  //   //fetch(`http://localhost:5000/add/${id}`,{
-  //   //   method:"DELETE",
-  //   // })
-  //   // .then(res=>res.json())
-  //   // .then(data=> {
-  //   //   console.log(data)
-  //   //   if(data.deletedCount > 0){
-  //   //     alert("SDksdf")
-  //   //    console.log('delected succesfful')
-  //   //     const reamaingUser=loader.filter(use=>use._id !==id)
-  //   //     setUser(reamaingUser)
-  //   //   }
-  //   // })
-  // };
   return (
     <div className="">
       <UseTitle heading="MY ADD TOURIST  LIST "></UseTitle>

@@ -54,6 +54,15 @@ fetch(`http://localhost:5000/AllUpdate/${id}`,{
   headers:{'content-type':'application/json'},
   body:JSON.stringify(AddSpot)
 })
+.then(res=>res.json())
+.then(data=>{
+console.log(data)
+  if (data.modifiedCount > 0) {
+        console.log(data);
+       toast("success fully UPDATED");
+     }
+
+})
 
 
 
