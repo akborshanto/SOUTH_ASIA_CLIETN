@@ -4,7 +4,7 @@ import TouristSpotCard from './TouristSpotCard'
 const TouristSpot = () => {
 const [tourist,setTourist]=useState([])
 useEffect(()=>{
-fetch('http://localhost:5000/allSpot')
+fetch('https://southest-asia-server.vercel.app/allSpot')
 .then(res=>res.json())
 .then(data=> setTourist(data))
 

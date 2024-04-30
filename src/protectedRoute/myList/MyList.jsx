@@ -11,7 +11,7 @@ const [tour,setTour]=useState([])
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myList/${user?.email}`)
+    fetch(`https://southest-asia-server.vercel.app/myList/${user?.email}`)
     .then(res=>res.json())
     .then(data=>{
     setTour(data)
@@ -32,7 +32,7 @@ const handleDelete=(id)=>{
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/delete/${id}`,{
+      fetch(`https://southest-asia-server.vercel.app/delete/${id}`,{
 
       method:"DELETE"
       

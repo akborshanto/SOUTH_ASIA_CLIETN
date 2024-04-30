@@ -31,7 +31,7 @@ element:<Home></Home>,
 },
 {path:'/allTourist',
 element:<AllTourist></AllTourist>,
-loader:()=>fetch('http://localhost:5000/allSpot')
+loader:()=>fetch('https://southest-asia-server.vercel.app/allSpot')
 },
 
 {
@@ -66,7 +66,7 @@ element:<Login></Login>
   
   <UpdateSpot></UpdateSpot>
   </PrivateRoute>,
-  loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
+  loader:({params})=>fetch(`https://southest-asia-server.vercel.app/addSpot/${params.id}`)
 },
 
 /* ============subcategory */

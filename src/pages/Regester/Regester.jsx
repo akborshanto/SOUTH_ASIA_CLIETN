@@ -112,7 +112,7 @@ const Regester = () => {
             </label>
           </div>
           <button className="block w-full p-3 text-center rounded-sm bg-[#AADDE5]  ">
-            SIGN IN
+            Sign In
           </button>
         </form>
         <Link to="/login">

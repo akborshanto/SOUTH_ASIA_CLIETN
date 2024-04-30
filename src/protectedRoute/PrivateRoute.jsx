@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
 console.log(location)
   const {user,loading}=useContext(AuthContext)
   if(loading){
-    return <span className="loading loading-spinner text-success"></span>
+    return //<span className="loading loading-spinner text-success"></span>
   }
 if(user){
   return children

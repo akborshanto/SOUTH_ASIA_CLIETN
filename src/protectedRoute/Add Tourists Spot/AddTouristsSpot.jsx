@@ -41,7 +41,7 @@ const AddTouristsSpot = () => {
     console.log(AddSpot);
 
     /* ALL DATA */
-    fetch("http://localhost:5000/allSpot", {
+    fetch("https://southest-asia-server.vercel.app/allSpot", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(AddSpot),
@@ -55,7 +55,7 @@ const AddTouristsSpot = () => {
 
     /* POST METHOD MY LIST✅✅💛❤✅💛❤ */
 
-    fetch("http://localhost:5000/addTourism", {
+    fetch("https://southest-asia-server.vercel.app/addTourism", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(AddSpot),

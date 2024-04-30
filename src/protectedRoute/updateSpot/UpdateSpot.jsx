@@ -10,7 +10,7 @@ const Update = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:5000/singleUpdate/${id}`)
+    fetch(`https://southest-asia-server.vercel.app/singleUpdate/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -49,7 +49,7 @@ const Update = () => {
     };
 
 
-fetch(`http://localhost:5000/AllUpdate/${id}`,{
+fetch(`https://southest-asia-server.vercel.app/AllUpdate/${id}`,{
   method:"PUT",
   headers:{'content-type':'application/json'},
   body:JSON.stringify(AddSpot)
@@ -264,94 +264,6 @@ console.log(data)
         </form>
       </section>
 
-      {/*    <div>
-    <div className="hero min-h-screen">
-    <ToastContainer position="top-center" />
-    <div className="hero-content flex-col lg:flex-row-reverse">
-      <div className="text-center lg:text-left">
-        <h1 className="text-5xl font-bold">UPDATE TOURIEST SPOT</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      </div>
-      <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <form className="card-body" onSubmit={updateSpot}>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo</span>
-            </label>
-            <input name='photo' type="text"  defaultValue={loader.photo}   placeholder="photo" className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">ToureistName</span>
-            </label>
-            <input name='ToureistName' type="text"  defaultValue={loader.ToureistName}  placeholder="ToureistName" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">country_Name</span>
-            </label>
-            <input name='country_Name' type="text"  defaultValue={loader.country_Name}  placeholder="country_Name" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">location</span>
-            </label>
-            <input name='location' type="text"  defaultValue={loader.location}  placeholder="location" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Short description</span>
-            </label>
-            <input name='description' type="text"  defaultValue={loader.description}   placeholder="description" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">average_cost</span>
-            </label>
-            <input name='average_cost' type="text"  defaultValue={loader.average_cost}  placeholder="average_cost" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">seasonality</span>
-            </label>
-            <input name='seasonality' type="text"  defaultValue={loader.seasonality}    placeholder="seasonality" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">travel_time</span>
-            </label>
-            <input name='travel_time' type="text"  defaultValue={loader.travel_time}   placeholder="travel_time" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">totaVisitorsPerYear</span>
-            </label>
-            <input name='totaVisitorsPerYear' type="text"  defaultValue={loader.totaVisitorsPerYear}   placeholder="totaVisitorsPerYear" className="input input-bordered" required />
-          </div>
-         
-
-         
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Update SPOT</button>
-          </div>     <div className="form-control mt-6">
-            <button className="btn btn-primary">Update SPOT</button>
-          </div>      <div className="form-control mt-6">
-            <button className="btn btn-primary">Update SPOT</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-    </div>
-
- */}
     </div>
   );
 };

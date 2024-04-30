@@ -6,7 +6,7 @@ const CountriesSection = () => {
   const [internationSpot, setInternationalSpot] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllInternationalData")
+    fetch("https://southest-asia-server.vercel.app/getAllInternationalData")
       .then((res) => res.json())
       .then((data) => setInternationalSpot(data));
   }, []);
