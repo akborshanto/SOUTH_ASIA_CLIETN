@@ -188,7 +188,7 @@ console.log(data)
               </label>
               <input
                 name="average_cost"
-                type="text"
+                type="number"
                 placeholder="average_cost"
                 className="w-full input input-bordered"
                 required
@@ -214,7 +214,7 @@ console.log(data)
               </label>
               <input
                 name="travel_time"
-                type="text"
+                type="time"
                 placeholder="travel_time"
                 className=" w-full input input-bordered"
                 required
@@ -227,7 +227,7 @@ console.log(data)
               </label>
               <input
                 name="totaVisitorsPerYear"
-                type="text"
+                type="number"
                 placeholder="totaVisitorsPerYear"
                 className=" w-full input input-bordered"
                 required

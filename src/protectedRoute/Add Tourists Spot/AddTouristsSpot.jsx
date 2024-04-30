@@ -165,13 +165,9 @@ toast.success("SUCCESSFULLY ADDED ")
               <label className="label">
                 <span className="label-text">Short description</span>
               </label>
-              <input
-                name="description"
-                type="text"
-                placeholder="description"
-                className=" w-full input input-bordered"
-                required
-              />
+              <textarea        name="description"
+              type="text" className="textarea textarea-info w-full input input-bordered" placeholder="descreption.."      required></textarea>
+
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
@@ -179,7 +175,7 @@ toast.success("SUCCESSFULLY ADDED ")
               </label>
               <input
                 name="average_cost"
-                type="text"
+                type="number"
                 placeholder="average_cost"
                 className="w-full input input-bordered"
                 required
@@ -203,7 +199,7 @@ toast.success("SUCCESSFULLY ADDED ")
               </label>
               <input
                 name="travel_time"
-                type="text"
+                type="time"
                 placeholder="travel_time"
                 className=" w-full input input-bordered"
                 required
@@ -215,7 +211,7 @@ toast.success("SUCCESSFULLY ADDED ")
               </label>
               <input
                 name="totaVisitorsPerYear"
-                type="text"
+                type="number"
                 placeholder="totaVisitorsPerYear"
                 className=" w-full input input-bordered"
                 required
@@ -227,6 +223,7 @@ toast.success("SUCCESSFULLY ADDED ")
               </label>
               <input
                 name="Name"
+        
                 type="text"
                 placeholder="Name"
                 className=" w-full input input-bordered"
@@ -242,6 +239,8 @@ toast.success("SUCCESSFULLY ADDED ")
                 type="email"
                 placeholder="Email"
                 className=" w-full input input-bordered"
+                defaultValue={user?.email}
+                disabled
                 required
               />
             </div>
@@ -253,98 +252,7 @@ toast.success("SUCCESSFULLY ADDED ")
         </form>
       </section>
 
-      {/* ======================================= */}
-
-      <div className="hero min-h-screen">
-        {/*     <div className="hero-content flex-col lg:flex-row-reverse">
-      <div className="text-center lg:text-left">
-        <h1 className="text-5xl font-bold">ADD TOURIEST SPOT</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      </div>
-      <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <form className="card-body" onSubmit={addTouristSpot}>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo</span>
-            </label>
-            <input name='photo' type="text" placeholder="photo" className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">ToureistName</span>
-            </label>
-            <input name='ToureistName' type="text" placeholder="ToureistName" className="  w-full input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">country_Name</span>
-            </label>
-            <input name='country_Name' type="text" placeholder="country_Name" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">location</span>
-            </label>
-            <input name='location' type="text" placeholder="location" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Short description</span>
-            </label>
-            <input name='description' type="text" placeholder="description" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">average_cost</span>
-            </label>
-            <input name='average_cost' type="text" placeholder="average_cost" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">seasonality</span>
-            </label>
-            <input name='seasonality' type="text" placeholder="seasonality" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">travel_time</span>
-            </label>
-            <input name='travel_time' type="text" placeholder="travel_time" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">totaVisitorsPerYear</span>
-            </label>
-            <input name='totaVisitorsPerYear' type="text" placeholder="totaVisitorsPerYear" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input name='Email' type="email" placeholder="Email" className="input input-bordered" required />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Name</span>
-            </label>
-            <input name='Name' type="text" placeholder="Name" className="input input-bordered" required />
-          </div>
-         
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">ADD SPOT</button>
-          </div>
-        </form>
-      </div>
-    </div> */}
-      </div>
+    
     </div>
   );
 };

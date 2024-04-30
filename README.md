@@ -1,8 +1,46 @@
-# React + Vite
+# TOURIEST_ASIA PROJECT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Tourist Spot Guide! This repository contains information about various tourist spots around the world. Whether you're a traveler planning your next adventure or just curious about different destinations, this guide has got you covered.
+## Functionality
 
-Currently, two official plugins are available:
+The Tourism site promote Tourist spot with latest detailed information to help and provide tourist the best quality Tours.
+Provide the Trending and Popular Tours.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Admin**
+has full access of the tourism site.
+
+- Add Tours requested by registered users.
+- Remove Tours if needed.
+- Update Tours.
+
+**Registered User**
+has partial access to the tourism site.
+
+- Send a request tours
+- Like, rate, and comment in tours
+- Be able to share tours in social media
+
+**Guest User**
+can only view tours.
+## Tech Stack to be use
+
+- Front end
+- React js
+- NodeJS expressJS
+- Database
+  -MongoDB
+  # These Pacage used in this project
+  - [SWIPPER.js](https://swiperjs.com/) 
+  -[React-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
+  - [React-tooltip](https://react-tooltip.com/) 
+  -[ React Awesome reveal](https://www.npmjs.com/package/react-awesome-reveal)
+
+# Some Component and framework which are use in this project
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) 
+- [React Router](https://reactrouter.com/en/main)
+- [Tailwind](https://tailwindcss.com/) & [DaisyUi](https://daisyui.com/) $ [mumba uiu](https://mambaui.com/)
+- [Firebase](https://firebase.google.com/)
+# Live Link to FIREBASE CLIENT SITE
+- [Livelink] (https://an-resedential.web.app)
+# Live Link to VERCEL SERVER SITE
+- [Livelink] (https://an-resedential.web.app)

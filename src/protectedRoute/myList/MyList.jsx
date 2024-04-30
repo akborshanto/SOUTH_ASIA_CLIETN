@@ -79,76 +79,8 @@ const handleDelete=(id)=>{
 //   })
 // fetch(`http://localhost:5000/delete/${id}`,{
 
-// method:"DELETE"
-
-// })
-// .then(res=>res.json())
-// .then(data=>{
-// if(data.deletedCount >0){
-
-//   setControl(!control)
-//   Swal.fire({
-//     title: "Deleted!",
-//     text: "Your LIST has been deleted.",
-//     icon: "success"
-//   });
-
-// }
-
-
-
-// })
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =======MY LIST====== */
-
-// useEffect(()=>{
-// fetch(`http://localhost:5000/addPD/${user?.email}`)
-
-// .then(res=>res.json())
-// .then(data=>setItem(data))
-// },[user])
-//✅✅✅✅✅✅✅✅✅✅✅✅✅✅
-
-/* ==================🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩============ */
-// const handleDelete = (id) => {
-//   ///make sure delete user
-//   //fetch(`http://localhost:5000/add/${id}`,{
-//   //   method:"DELETE",
-//   // })
-//   // .then(res=>res.json())
-//   // .then(data=> {
-//   //   console.log(data)
-//   //   if(data.deletedCount > 0){
-//   //     alert("SDksdf")
-//   //    console.log('delected succesfful')
-//   //     const reamaingUser=loader.filter(use=>use._id !==id)
-//   //     setUser(reamaingUser)
-//   //   }
-//   // })
-// };
-
-
-
-
-
-
-
-
 
 
   return (
@@ -157,21 +89,6 @@ const handleDelete=(id)=>{
       <div className="overflow-x-auto my-8">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
     {    <table className="table italic">
           {/* head */}
           <thead>
@@ -181,7 +98,7 @@ const handleDelete=(id)=>{
               <th className="text-xl font-extralight">TRAVEL TIME</th>
               <th className="text-xl font-extralight">TOTAL VISITOR</th>
 
-              <th className="text-xl font-extralight">TOTAL VISITOR</th>
+              <th className="text-xl font-extralight">TOTAL COST</th>
 
               <th className="text-xl font-extralight">DETAILS</th>
 

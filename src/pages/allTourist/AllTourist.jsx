@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTourist = () => {
+  const [sortPage, setSortPage] = useState([]);
+
+  const loader = useLoaderData();
 
 
-  const loader=useLoaderData()
-//   console.log(loaders)
-// const [loader,setLoader]=useState([])
-// fetch('http://localhost:5000/addTourism')
-// .then(res=>res.json())
-// .then(data=>setLoader(data))
-
-
-
+  const  cost=loader.sort((a,b)=> a.average_cost -b.average_cost ).map(item=>console.log(item))
 
   return (
     <div>
+      <div className="text-center">
 
 
 
@@ -23,30 +19,30 @@ const AllTourist = () => {
 
 
 
+        <div className="dropdown text-center mb-8">
+          <div
+            tabIndex={0}
+            role="button"
+            className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center "
+          >
+            SORT OF Averest Cost
+          </div>
 
-
-    
-  <div className="text-center">
-  <div className="dropdown text-center mb-8">
-  <div tabIndex={0} role="button" className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center ">
-   SORT OF  Averest Cost
-  </div>
-
-
-
-  <ul
-    tabIndex={0}
-    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-  >
-    <li>
-     <a href="" className="text-gray-400" >ASENDING</a>
-    </li>
-    <li>
-      <a>DESENDING</a>
-    </li>
-  </ul>
-</div>
-  </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a href="" className="text-gray-400" value="1">
+                ASENDING
+              </a>
+            </li>
+            <li>
+              <a>DESENDING</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12 ">
         {loader.map((sp) => (
@@ -58,17 +54,17 @@ const AllTourist = () => {
             />
             <div className="flex flex-col justify-between p-6 space-y-8 ">
               <div className="space-y-2">
-              <p className="text-white">
-              {" "}
-              Tourist_Spots:
-              <span className="text-gray-600">{sp.ToureistName}</span>
-            </p>
-            <p className="text-white">
-            {" "}
-            Average_Cost:
-            <span className="text-gray-600">{sp.average_cost}</span>
-          </p>
-       
+                <p className="text-white">
+                  {" "}
+                  Tourist_Spots:
+                  <span className="text-gray-600">{sp.ToureistName}</span>
+                </p>
+                <p className="text-white">
+                  {" "}
+                  Average_Cost:
+                  <span className="text-yellow-400 text-xl bold">{sp.average_cost}</span>
+                </p>
+
                 <h2>
                   Total visitor:{" "}
                   <span className="text-gray-600">
@@ -77,7 +73,8 @@ const AllTourist = () => {
                 </h2>
 
                 <p>
-                 TravelTime:<span className="text-gray-600">{sp.travel_time}</span>
+                  TravelTime:
+                  <span className="text-gray-600">{sp.travel_time}</span>
                 </p>
 
                 <p>
@@ -90,7 +87,7 @@ const AllTourist = () => {
                   type="button"
                   className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900"
                 >
-               VIEW DETAILS
+                  VIEW DETAILS
                 </button>
               </Link>
             </div>
