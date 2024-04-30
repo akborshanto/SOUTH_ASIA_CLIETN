@@ -2,51 +2,24 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTourist = () => {
-  const [sortPage, setSortPage] = useState([]);
-
+//const [sort,setSort]=useState([])
   const loader = useLoaderData();
+  
+// const handleRating=(costs)=>{
 
+// const  cost=loader.sort((a,b)=> b.average_cost - a.average_cost )
+// setSort(loader)
+//   //console.log(e.target.value)
+// }
 
-  const  cost=loader.sort((a,b)=> a.average_cost -b.average_cost ).map(item=>console.log(item))
 
   return (
     <div>
-      <div className="text-center">
 
 
-
-
-
-
-
-        <div className="dropdown text-center mb-8">
-          <div
-            tabIndex={0}
-            role="button"
-            className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center "
-          >
-            SORT OF Averest Cost
-          </div>
-
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a href="" className="text-gray-400" value="1">
-                ASENDING
-              </a>
-            </li>
-            <li>
-              <a>DESENDING</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12 ">
-        {loader.map((sp) => (
-          <div className="max-w-xs rounded-md shadow-md bg-gradient-to-r from-sky-400 to-cyan-600 text-white p-5 mx-auto md:mx-auto lg:mx-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12 justify-items-center  ">
+        {loader?.map((sp) => (
+          <div className="max-w-xs rounded-md shadow-md bg-gradient-to-r from-sky-400 to-cyan-600 text-white p-5 mx-auto md:mx-auto lg:mx-0 w-[340px]">
             <img
               src={sp.photo}
               alt=""

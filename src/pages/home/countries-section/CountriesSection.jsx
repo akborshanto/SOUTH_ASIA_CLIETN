@@ -30,10 +30,10 @@ const CountriesSection = () => {
 
 
 	  
-	  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+	  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center ">
 	  {internationSpot?.map((data) => (
 		<div key={Math.random()}>
-		  <div className="max-w-xs rounded-md shadow-md bg-gray-900 text-gray-100">
+		  <div className="max-w-xs rounded-md shadow-md bg-blue-400 w-[320px] p-3  text-gray-100">
 			<img
 			  src={data.img}
 			  alt=""

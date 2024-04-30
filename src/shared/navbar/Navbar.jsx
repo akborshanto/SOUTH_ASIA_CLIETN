@@ -37,19 +37,19 @@ const handleLogout=()=>{
 }
   const links=<>
   <li>
-  <NavLink to='/' className={({isActive})=>isActive ? " bg-gradient-to-r from-emerald-500 to-emerald-900  text-white":" border"}>HOME</NavLink>
+  <NavLink to='/' className={({isActive})=>isActive ? " bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border"}>HOME</NavLink>
 
   </li>
 
 
 <li>
-<NavLink to='/allTourist' className={({isActive})=>isActive?"bg-gradient-to-r from-emerald-500 to-emerald-900  text-white":" border" }>All Tourists Spot</NavLink>
+<NavLink to='/allTourist' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" }>All Tourists Spot</NavLink>
 </li>
   
 <li>
 
 {
-  user &&   <NavLink to='/TouristsSpotst' className={({isActive})=>isActive?"bg-gradient-to-r from-emerald-500 to-emerald-900  text-white":" border" } >Add Tourists Spot</NavLink>
+  user &&   <NavLink to='/TouristsSpotst' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" } >Add Tourists Spot</NavLink>
 }</li>
 
 
@@ -58,7 +58,7 @@ const handleLogout=()=>{
 
 
 {
-  user &&   <NavLink to='/myList' className={({isActive})=>isActive?"bg-gradient-to-r from-emerald-500 to-emerald-900  text-white":" border" }>My List</NavLink>
+  user &&   <NavLink to='/myList' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" }>My List</NavLink>
 
 }
 </li>
@@ -79,7 +79,7 @@ const handleLogout=()=>{
         {links}
       </ul>
       </div>
-      <button className="btn btn-outline btn-success  text-14px lg:text2xl "    data-tooltip-id="my-tooltip"
+      <button className="btn btn-outline btn-accent  text-14px lg:text2xl "    data-tooltip-id="my-tooltip"
       data-tooltip-content="SOUTHEAST ASIA"
       data-tooltip-place="top">TOURISM<span>ASIA</span></button>
     
@@ -94,7 +94,7 @@ const handleLogout=()=>{
 
       <input type="checkbox" className="toggle toggle-success mx-3 " onClick={handleTheme} />
     
-      <button className="bg-gradient-to-r from-teal-400 to-gray-800 rounded-full p-0 lg:p-2  mr-2 lg:mr-4 text-white">
+      <button className="bg-gradient-to-r from-sky-400 to-cyan-600  rounded-full p-0 lg:p-2  mr-2 lg:mr-4 text-white">
       {user ? (
         <img
           src={ user?.photoURL ||'https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-855.jpg?t=st=1713332757~exp=1713336357~hmac=b6020d1aa8ca33824997fd316fa614c2beac7f75a202b0d1015d0c779eacaf6e&w=740'}
@@ -109,14 +109,14 @@ const handleLogout=()=>{
     {user ? (
       <button
         onClick={() => logOut()}
-        className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white font-bold py-2 px-2 lg:px-4
+        className="bg-gradient-to-r from-sky-400 to-cyan-600 text-white font-bold py-2 px-2 lg:px-4
          border-b-4 border-green-700 hover:border-green-500 rounded"
       >
         logout
       </button>
     ) : (
       <NavLink to="login">
-        <button class="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white font-bold py-2 px-2 lg:px-4 border-b-4 border-green-700
+        <button class="bg-gradient-to-r from-sky-400 to-cyan-600 text-white font-bold py-2 px-2 lg:px-4 border-b-4 border-green-700
          hover:green-blue-500 rounded">
           SignIn
         </button>

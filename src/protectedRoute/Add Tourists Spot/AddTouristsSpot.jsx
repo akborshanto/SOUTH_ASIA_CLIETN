@@ -11,6 +11,7 @@ const AddTouristsSpot = () => {
     const email = user.email;
     const form = e.target;
     const photo = form.photo.value;
+    // const country_Name = form.country_Name.value;
     const country_Name = form.country_Name.value;
     const ToureistName = form.ToureistName.value;
     const location = form.location.value;
@@ -37,58 +38,41 @@ const AddTouristsSpot = () => {
       email,
     };
 
-console.log(AddSpot)
+    console.log(AddSpot);
 
+    /* ALL DATA */
+    fetch("http://localhost:5000/allSpot", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(AddSpot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.insertedId) {
+          toast.success("SUCCESSFULLY ADDED ");
+        }
+      });
 
+    /* POST METHOD MY LIST✅✅💛❤✅💛❤ */
 
-/* ALL DATA */
-fetch('http://localhost:5000/allSpot',{
-
-
-method:"POST",
-headers:{'content-type':'application/json'},
-body:JSON.stringify(AddSpot)
-})
-.then(res=>res.json())
-.then(data=>{
-if(data?.insertedId){
-
-toast.success("SUCCESSFULLY ADDED ")
-}
-
-})
-
-
-/* POST METHOD MY LIST✅✅💛❤✅💛❤ */
-
-fetch('http://localhost:5000/addTourism',{
-
-
-method:"POST",
-headers:{'content-type':'application/json'},
-body:JSON.stringify(AddSpot)
-})
-.then(res=>res.json())
-.then(data=>{
-if(data?.insertedId){
-
-toast.success("SUCCESSFULLY ADDED ")
-}
-
-})
-
-
-
-
-};
-
+    fetch("http://localhost:5000/addTourism", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(AddSpot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.insertedId) {
+          toast.success("SUCCESSFULLY ADDED ");
+        }
+      });
+  };
 
   return (
     <div>
-
       <ToastContainer position="top-center" />
 
-      <section className="p-6 bg-[#6ab8b4] text-white">
+      <section className="p-6 bg-[#6ab8b4] text-white my-8 ">
         <UseTitle heading="ADD TOURIEST SPOT"></UseTitle>
 
         <form
@@ -98,26 +82,31 @@ toast.success("SUCCESSFULLY ADDED ")
           onSubmit={addTouristSpot}
         >
 
-
-
-
-
+        <div className="col-span-full sm:col-span-3 text-center  py-4 lg:py-8">
+        <label className="label">
+          <h2 className="label-text text-xl font-bold  mx-auto">Country_Name</h2>
+        </label>
+        <select
+          className="select select-info w-full max-w-xs  text-gray-400"
+          name="country_Name"
+        >
+          <option disabled >Select Country</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Cambodia">Cambodia</option>
+        </select>
+      </div>
 
 
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-[#6ab8b4] text-gray-400">
-
-
-
-
-
-
-
-
             <div className="col-span-full sm:col-span-3">
               <label className="label">
-                <span className="label-text">Photo</span>
+                <span className="label-text  text-xl font-bold">Photo</span>
               </label>
-              <input 
+              <input
                 name="photo"
                 type="text"
                 placeholder="photo"
@@ -127,7 +116,7 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-3">
               <label className="label">
-                <span className="label-text">ToureistName</span>
+                <span className="label-text  text-xl font-bold">ToureistName</span>
               </label>
               <input
                 name="ToureistName"
@@ -137,21 +126,10 @@ toast.success("SUCCESSFULLY ADDED ")
                 required
               />
             </div>
+         
             <div className="col-span-full sm:col-span-3 ">
               <label className="label">
-                <span className="label-text">country_Name</span>
-              </label>
-              <input
-                name="country_Name"
-                type="text"
-                placeholder="country_Name"
-                className="w-full input input-bordered"
-                required
-              />
-            </div>
-            <div className="col-span-full sm:col-span-3 ">
-              <label className="label">
-                <span className="label-text">location</span>
+                <span className="label-text text-xl font-bold">location</span>
               </label>
               <input
                 name="location"
@@ -163,15 +141,19 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">Short description</span>
+                <span className="label-text text-xl font-bold">Short description</span>
               </label>
-              <textarea        name="description"
-              type="text" className="textarea textarea-info w-full input input-bordered" placeholder="descreption.."      required></textarea>
-
+              <textarea
+                name="description"
+                type="text"
+                className="textarea textarea-info w-full input input-bordered"
+                placeholder="descreption.."
+                required
+              ></textarea>
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">average_cost</span>
+                <span className="label-text text-xl font-bold">average_cost</span>
               </label>
               <input
                 name="average_cost"
@@ -183,7 +165,7 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">seasonality</span>
+                <span className="label-text text-xl font-bold">seasonality</span>
               </label>
               <input
                 name="seasonality"
@@ -195,7 +177,7 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">travel_time</span>
+                <span className="label-text text-xl font-bold">travel_time</span>
               </label>
               <input
                 name="travel_time"
@@ -207,7 +189,7 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">totaVisitorsPerYear</span>
+                <span className="label-text text-xl font-bold">totaVisitorsPerYear</span>
               </label>
               <input
                 name="totaVisitorsPerYear"
@@ -219,11 +201,10 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text text-xl font-bold">Name</span>
               </label>
               <input
                 name="Name"
-        
                 type="text"
                 placeholder="Name"
                 className=" w-full input input-bordered"
@@ -232,7 +213,7 @@ toast.success("SUCCESSFULLY ADDED ")
             </div>
             <div className="col-span-full sm:col-span-2">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-xl font-bold">Email</span>
               </label>
               <input
                 name="Email"
@@ -251,8 +232,6 @@ toast.success("SUCCESSFULLY ADDED ")
           </button>
         </form>
       </section>
-
-    
     </div>
   );
 };

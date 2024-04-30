@@ -115,6 +115,36 @@ console.log(data)
           className=" text-white container flex flex-col mx-auto space-y-12"
           onSubmit={updateSpot}
         >
+
+
+        <div className="col-span-full sm:col-span-3 text-center  py-4 lg:py-8">
+        <label className="label">
+          <h2 className="label-text text-xl font-bold  mx-auto">Country_Name</h2>
+        </label>
+        <select
+          className="select select-info w-full max-w-xs  text-gray-400"
+          name="country_Name"
+          defaultValue={updateTour.country_Name}
+        >
+          <option disabled >Select Country</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Cambodia">Cambodia</option>
+        </select>
+      </div>
+
+
+
+
+
+
+
+
+
+
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-[#6ab8b4] text-gray-400">
             <div className="col-span-full sm:col-span-3">
               <label className="label">
@@ -142,7 +172,7 @@ console.log(data)
                 defaultValue={updateTour.ToureistName}
               />
             </div>
-            <div className="col-span-full sm:col-span-3 ">
+   {/*          <div className="col-span-full sm:col-span-3 ">
               <label className="label">
                 <span className="label-text">country_Name</span>
               </label>
@@ -155,7 +185,7 @@ console.log(data)
                 defaultValue={updateTour.country_Name}
               />
             </div>
-
+ */}
             <div className="col-span-full sm:col-span-2">
               <label className="label">
                 <span className="label-text">Short description</span>

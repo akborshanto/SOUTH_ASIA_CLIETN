@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer p-10 bg-neutral text-neutral-content">
     <aside>
      
-    <button className="btn btn-outline btn-success  text-14px lg:text2xl "    data-tooltip-id="my-tooltip"
+    <button className="btn btn-outline btn-accent  text-14px lg:text2xl "    data-tooltip-id="my-tooltip"
     data-tooltip-content="SOUTHEAST ASIA"
     data-tooltip-place="top">TOURISM<span>ASIA</span></button>
   <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
