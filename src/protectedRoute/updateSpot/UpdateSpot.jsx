@@ -137,14 +137,6 @@ console.log(data)
       </div>
 
 
-
-
-
-
-
-
-
-
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-[#6ab8b4] text-gray-400">
             <div className="col-span-full sm:col-span-3">
               <label className="label">

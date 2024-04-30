@@ -13,6 +13,12 @@ import Regester from "../pages/Regester/Regester";
 import PrivateRoute from "../protectedRoute/PrivateRoute";
 import ViewDetail from "../component/viewDetail/ViewDetail";
 import UpdateSpot from "../protectedRoute/updateSpot/UpdateSpot";
+import Bangladesh from "../pages/SUBCATEGORY/Bangladesh/Bangladesh";
+import Malaysia from "../pages/SUBCATEGORY/MALAYSIA/Malaysia";
+import Thiland from "../pages/SUBCATEGORY/THILAND/Thiland";
+import Indonesia from "../Indonesia";
+import Vietnam from "../pages/SUBCATEGORY/Vietnam/Vietnam";
+import Cambodia from "../pages/SUBCATEGORY/Cambodia/Cambodia";
 
   export const router = createBrowserRouter([
     {
@@ -61,7 +67,41 @@ element:<Login></Login>
   <UpdateSpot></UpdateSpot>
   </PrivateRoute>,
   loader:({params})=>fetch(`http://localhost:5000/addSpot/${params.id}`)
-}
+},
+
+/* ============subcategory */
+{
+  element:'/bangaldesh',
+  element:<Bangladesh></Bangladesh>
+
+},
+{
+  element:'/malaysia',
+  element:<Malaysia></Malaysia>
+
+},
+{
+  element:'/thiland',
+  element:<Thiland></Thiland>
+
+},
+{
+  element:'/indonesia',
+  element:<Indonesia></Indonesia>
+
+},
+{
+  element:'/vietnam',
+  element:<Vietnam></Vietnam>
+
+},
+{
+  element:'/cambodia',
+  element:<Cambodia></Cambodia>
+
+},
+
+
 
       ]
     },
