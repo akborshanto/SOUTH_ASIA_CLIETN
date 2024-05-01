@@ -9,13 +9,11 @@ console.log(location)
   if(loading){
     return //<span className="loading loading-spinner text-success"></span>
   }
-if(user){
-  return children
-}else{
-  return (
-    <Navigate to='/login' state={location.pathname}></Navigate>
-  )
-}
+  if (user) {
+    return children;
+  } else {
+    return <Navigate to="/login" state={location.pathname}></Navigate>;
+  }
   
 
 }

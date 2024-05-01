@@ -39,6 +39,7 @@ const [loading,setLoading]=useState(true)
   /* login with GITHUB ============*/
 
   const githubLogin=()=>{
+    setLoading(true)
     return signInWithPopup(auth,githubprovider)
   }
   /* ===========onAUTH STATE CHANGE======== */

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTourist = () => {
-//const [sort,setSort]=useState([])
+const [sort,setSort]=useState([])
   const loader = useLoaderData();
   
 // const handleRating=(costs)=>{
@@ -15,7 +15,33 @@ const AllTourist = () => {
 
   return (
     <div>
+      <div className="text-center">
 
+
+
+     <div className="dropdown text-center mb-8">
+          <div
+            tabIndex={0}
+            role="button"
+            className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center "
+          >
+            SORT OF Averest Cost
+          </div>
+
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+            
+              <a href="" className="text-gray-400" value="1"  onChange={()=>handleRating(sort)}>
+                ASENDING
+              </a>
+            </li>
+      
+          </ul>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12 justify-items-center  ">
         {loader?.map((sp) => (

@@ -86,7 +86,7 @@ const handleDelete=(id)=>{
   return (
     <div className="">
       <UseTitle heading="MY ADD TOURIST  LIST "></UseTitle>
-      <div className="overflow-x-auto my-8">
+      <div className="overflow-x-auto my-8 py-8">
 
 
     {    <table className="table italic">

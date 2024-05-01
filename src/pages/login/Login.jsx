@@ -10,9 +10,9 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const { login ,googleLogin,user, githubLogin} = useContext(AuthContext);
 
-const location=useLocation()
-console.log(location)
-const navigate=useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
+
   /* ========LOGIN===== */
   const handleLoging = (e) => {
     e.preventDefault();
@@ -22,8 +22,8 @@ const navigate=useNavigate()
 /* logint */
 login(email,password)
 .then(result=>{
-navigate(location?.state ?location.state:"/")
-console.log(result)
+//navigate(location?.state ?location.state:"/")
+
 })
 .catch(error=>{
 	toast.error("Please Give the Correct Email & Password.")
@@ -48,9 +48,14 @@ const handleGoogle=()=>{
 
 
 
-const handle=(e)=>{
-  console.log(e.target.value)
-}
+  /* location.state.pathname */
+  useEffect(() => {
+    if (user) {
+      navigate(location?.state ? location.state : "/");
+    }
+  }, [user]);
+
+
 
   return (
     <div>
