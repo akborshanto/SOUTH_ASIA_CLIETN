@@ -42,5 +42,3 @@ can only view tours.
 - [Firebase](https://firebase.google.com/)
 # Live Link to FIREBASE CLIENT SITE
 - [Livelink_CLIENTSITE_] (https://south-asia-3915c.web.app)
-# Live Link to VERCEL SERVER SITE
-- [Livelink] (https://an-resedential.web.app)
