@@ -8,7 +8,7 @@ import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  const { login ,googleLogin,user, githubLogin} = useContext(AuthContext);
+  const { login, googleLogin, user, githubLogin } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,56 +19,53 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-/* logint */
-login(email,password)
-.then(result=>{
-//navigate(location?.state ?location.state:"/")
+    /* logint */
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
 
-})
-.catch(error=>{
-	toast.error("Please Give the Correct Email & Password.")
-})
+        if (user) {
+          toast.success("SUCCESSFYLL  LOGIN ");
+          navigate(location.state ? location.state : "/");
+        }
+
+        //navigate(location?.state ?location.state:"/")
+      })
+      .catch((error) => {
+        toast.error("Please Give the Correct Email & Password.");
+      });
 
     /* ========Password validation=========== */
     if (password.length < 6) {
       return toast.error(" PASSEORD Length must be at least 6 character");
     }
-    
-   
-  }
-/* =========google login ===*/
-const handleGoogle=()=>{
-	googleLogin()
-	.then(res=>{
-		toast("successfully Google Login")
-	})
-	.then(err=>console.log(err))
-}
+  };
 
+  /* =========google login ===*/
+  const handleGoogle = () => {
+    googleLogin()
+      .then((res) => {
+        const user=res.user;
+        toast("successfully Google Login");
+        navigate(location?.state ? location.state : "/")
 
+      })
+      .catch((err) => console.log(err));
+  };
 
-
-  /* location.state.pathname */
-  useEffect(() => {
-    if (user) {
-      navigate(location?.state ? location.state : "/");
-    }
-  }, [user]);
-
-
+  // /* location.state.pathname */
+  // useEffect(() => {
+  //   if (!user) {
+  //     navigate(location.state);
+  //   }
+  // }, [user]);
 
   return (
     <div>
-
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#6ab8b4] text-white mx-auto my-8">
         <ToastContainer position="top-center" />
 
-   
-
-
-
-
-        <h1 className="text-2xl font-bold text-center">Login  Your Account</h1>
+        <h1 className="text-2xl font-bold text-center">Login Your Account</h1>
         <form
           noValidate=""
           action=""
@@ -77,7 +74,7 @@ const handleGoogle=()=>{
         >
           <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block  ">
-            Email
+              Email
             </label>
             <input
               required
@@ -89,7 +86,7 @@ const handleGoogle=()=>{
             />
           </div>
           <div className="space-y-1 text-sm">
-          Password
+            Password
             <label className="input input-bordered flex items-center gap-2 text-black">
               <p onClick={() => setShow(!show)}>
                 {show ? <FaEye /> : <FaEyeSlash />}
@@ -116,7 +113,11 @@ const handleGoogle=()=>{
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm" onClick={googleLogin}>
+          <button
+            aria-label="Log in with Google"
+            className="p-3 rounded-sm"
+            onClick={googleLogin}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -126,7 +127,11 @@ const handleGoogle=()=>{
             </svg>
           </button>
 
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm" onClick={()=>githubLogin()}>
+          <button
+            aria-label="Log in with GitHub"
+            className="p-3 rounded-sm"
+            onClick={() => githubLogin()}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"

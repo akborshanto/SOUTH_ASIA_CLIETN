@@ -84,7 +84,7 @@ const handleDelete=(id)=>{
 
 
   return (
-    <div className="">
+    <div className=" ">
       <UseTitle heading="MY ADD TOURIST  LIST "></UseTitle>
       <div className="overflow-x-auto my-8 py-8">
 
@@ -93,10 +93,10 @@ const handleDelete=(id)=>{
           {/* head */}
           <thead>
             <tr>
-              <th></th>
+        
               <th className="text-xl font-extralight">COUNTRY </th>
               <th className="text-xl font-extralight">TRAVEL TIME</th>
-              <th className="text-xl font-extralight">TOTAL VISITOR</th>
+            
 
               <th className="text-xl font-extralight">TOTAL COST</th>
 
@@ -109,7 +109,7 @@ const handleDelete=(id)=>{
             <tbody key={Math.random()} className=" font-se ">
               {/* row 1 */}
               <tr>
-                <th></th>
+      
 
                 <td>
                   <div className="flex items-center gap-3">
@@ -133,7 +133,7 @@ const handleDelete=(id)=>{
                   <br />
                   <span className=" text-2xl">{list?.travel_time}</span>
                 </td>
-                <td className="text-2xl">{list.totaVisitorsPerYear}</td>
+             
                 <td className="text-2xl">{list?.average_cost}</td>
                 <th>
                   <Link to={`/updateSpot/${list._id}`}>

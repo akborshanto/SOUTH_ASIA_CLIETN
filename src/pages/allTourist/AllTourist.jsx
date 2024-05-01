@@ -11,6 +11,8 @@ const [sort,setSort]=useState([])
 // setSort(loader)
 //   //console.log(e.target.value)
 // }
+const item=loader.sort((a,b)=> b.average_cost  - a.average_cost)
+
 
 
   return (
@@ -25,7 +27,7 @@ const [sort,setSort]=useState([])
             role="button"
             className="p-4 text-xl font-bold m-1  text-white rounded-md bg-gradient-to-r from-cyan-200 to-cyan-400 text-gray-900 text-center "
           >
-            SORT OF Averest Cost
+     DESENDING AVEREST COST
           </div>
 
           <ul
@@ -34,7 +36,7 @@ const [sort,setSort]=useState([])
           >
             <li>
             
-              <a href="" className="text-gray-400" value="1"  onChange={()=>handleRating(sort)}>
+              <a href="" className="text-gray-400" value="1" >
                 ASENDING
               </a>
             </li>
@@ -44,7 +46,7 @@ const [sort,setSort]=useState([])
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12 justify-items-center  ">
-        {loader?.map((sp) => (
+        {item?.map((sp) => (
           <div className="max-w-xs rounded-md shadow-md bg-gradient-to-r from-sky-400 to-cyan-600 text-white p-5 mx-auto md:mx-auto lg:mx-0 w-[340px]">
             <img
               src={sp.photo}

@@ -18,7 +18,7 @@ fetch('https://southest-asia-server.vercel.app/allSpot')
 },[])
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center '>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center my-6'>
     {
 
 tourist?.slice(0,6).map(tour=><TouristSpotCard tour={tour} key={Math.random()}></TouristSpotCard>)

@@ -66,7 +66,7 @@ element:<Login></Login>
   
   <UpdateSpot></UpdateSpot>
   </PrivateRoute>,
-  loader:({params})=>fetch(`https://southest-asia-server.vercel.app/addSpot/${params.id}`)
+ // loader:({params})=>fetch(`https://southest-asia-server.vercel.app/addSpot/${params.id}`)
 },
 
 /* ============subcategory */

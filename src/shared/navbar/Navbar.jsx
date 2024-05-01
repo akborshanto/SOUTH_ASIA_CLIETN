@@ -28,7 +28,6 @@ if(e.target.checked){
 
 const {user,logOut}=useContext(AuthContext)
 
-
 /* LOG OUT */
 const handleLogout=()=>{
   logOut()
@@ -45,12 +44,17 @@ const handleLogout=()=>{
 <li>
 <NavLink to='/allTourist' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" }>All Tourists Spot</NavLink>
 </li>
-  
+
+    
 <li>
 
+
 {
-  user &&   <NavLink to='/TouristsSpotst' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" } >Add Tourists Spot</NavLink>
-}</li>
+  user && <NavLink to='/TouristsSpotst' className={({isActive})=>isActive?"bg-gradient-to-r from-sky-400 to-cyan-600  text-white":" border" } >Add Tourists Spot</NavLink>
+}
+
+</li>
+
 
 
 
