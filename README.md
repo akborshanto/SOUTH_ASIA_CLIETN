@@ -45,7 +45,7 @@ can only view tours.
 - [Livelink_CLIENTSITE_] (https://south-asia-3915c.web.app)
 ## Step to Install the project
 # 1.CLone the repository
-- git clone https://github.com/akborshanto/BOOK_STUDY.git
+- git clone https://github.com/akborshanto/SOUTH_ASIA_CLIETN.git
  # 2.Navigate to the project directory
 - cd projectName
  # 3.Install Dependencies
