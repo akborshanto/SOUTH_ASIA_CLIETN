@@ -41,4 +41,14 @@ can only view tours.
 - [Tailwind](https://tailwindcss.com/) & [DaisyUi](https://daisyui.com/) $ [mumba uiu](https://mambaui.com/)
 - [Firebase](https://firebase.google.com/)
 # Live Link to FIREBASE CLIENT SITE
+
 - [Livelink_CLIENTSITE_] (https://south-asia-3915c.web.app)
+## Step to Install the project
+# 1.CLone the repository
+- git clone https://github.com/akborshanto/BOOK_STUDY.git
+ # 2.Navigate to the project directory
+- cd projectName
+ # 3.Install Dependencies
+- npm install
+ #  4.Start the Development Server
+- NPM START
